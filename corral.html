@@ -1,0 +1,549 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8" /> 
+     <title>Granja Detallada con Pollitos</title>
+     <style>
+         body {margin:0; overflow:hidden;}
+         canvas {display:block;}
+     </style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+
+<script type="importmap"> 
+    {
+        "imports":{
+            "three": "./js/three.module.js",
+            "three/OrbitControls": "./js/OrbitControls.js" 
+        }
+}
+</script>
+
+<script type="module"> 
+    import * as THREE from 'three'; 
+    import {OrbitControls} from 'three/OrbitControls';
+
+    // Renderer
+    var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('myCanvas'),antialias: true});
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x87CEEB); // cielo azul
+
+    // Escena
+    var scene = new THREE.Scene();
+
+    // Cámara
+    var camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 5000);
+    camera.position.set(15, 10, 25);
+    scene.add(camera);
+
+    // Controles
+    var controls = new OrbitControls(camera, renderer.domElement);
+
+    // Luz
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(10, 15, 10);
+    scene.add(light);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+
+    //  SUELO
+    const sueloGeometry = new THREE.PlaneGeometry(80, 80);
+    const sueloMaterial = new THREE.MeshLambertMaterial({color: 0x228B22});
+    const suelo = new THREE.Mesh(sueloGeometry, sueloMaterial);
+    suelo.rotation.x = -Math.PI / 2;
+    suelo.position.y = -7; //  bajamos el plano verde
+    scene.add(suelo);
+
+ //CUBO1
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(0,0,0);
+
+   //CUBO2
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(3,0,0);
+
+       //CUBO3
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(6,0,0);
+
+ //CUBO4
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(9,0,0);
+
+ //CUBO5
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(12,0,0);
+
+ //CUBO5
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(15,0,0);
+
+//CUBO6
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(18,0,0);
+
+
+//CUBO7
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(21,0,0);
+
+//CUBO8
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(24,0,0);
+
+
+//CUBO9
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(27,0,0);
+
+
+//CUBO10
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,0);
+
+//CUBO11
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,3);
+
+mesh01.rotation.y = Math.PI/2;
+
+
+//CUBO12
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,6);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO13
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,9);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO14
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,12);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO15
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,15);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO16
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,18);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO17
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,21);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO18
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,24);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO19
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,27);
+
+mesh01.rotation.y = Math.PI/2;
+
+
+//CUBO20
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(30,0,30);
+
+mesh01.rotation.y = Math.PI/2;
+
+
+
+
+
+   //CUBO11enfrente
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,3);
+
+mesh01.rotation.y = Math.PI/2;
+
+
+//CUBO12
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,6);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO13
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,9);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO14
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,12);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO15
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,15);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO16
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,18);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO17
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,21);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO18
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,24);
+
+mesh01.rotation.y = Math.PI/2;
+
+//CUBO19
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,27);
+
+mesh01.rotation.y = Math.PI/2;
+
+
+//CUBO20
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-2,0,30);
+
+mesh01.rotation.y = Math.PI/2;
+
+ 
+
+
+
+
+
+
+ //CUBO1del otro lado
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(0,0,30);
+
+   //CUBO2
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(3,0,30);
+
+       //CUBO3
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(6,0,30);
+
+ //CUBO4
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(9,0,30);
+
+ //CUBO5
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(12,0,30);
+
+ //CUBO5
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(15,0,30);
+
+//CUBO6
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(18,0,30);
+
+
+//CUBO7
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(21,0,30);
+
+//CUBO8
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(24,0,30);
+
+
+//CUBO9
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(2,10,1);
+    var material01=new THREE.MeshBasicMaterial({color:0x8B4513, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(27,0,30);
+
+
+
+
+//linea acostada
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(-35,3,2);
+    var material01=new THREE.MeshBasicMaterial({color:0xcd853f, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(15,3.5,-1.8);
+
+    
+
+
+//linea acostada
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(-35,3,2);
+    var material01=new THREE.MeshBasicMaterial({color:0xcd853f, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(15,-4,-1.8);
+
+
+
+//linea acostada
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(-35,3,2);
+    var material01=new THREE.MeshBasicMaterial({color:0xcd853f, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(15,3.5,32.2);
+
+    //linea acostada
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(-35,3,2);
+    var material01=new THREE.MeshBasicMaterial({color:0xcd853f, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(15,-4,32.2);
+
+    
+    
+
+
+
+
+//CUBO20delotrolado
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(35,3,2);
+    var material01=new THREE.MeshBasicMaterial({color:0xcd853f, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(32.2,4,15);
+
+mesh01.rotation.y = Math.PI/2;
+    
+//CUBO20delotrolado
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(35,3,2);
+    var material01=new THREE.MeshBasicMaterial({color:0xcd853f, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(32.2,-4,15);
+
+mesh01.rotation.y = Math.PI/2;
+    
+
+
+//CUBO20delotrolado
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(35,3,2);
+    var material01=new THREE.MeshBasicMaterial({color:0xcd853f, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-3.5,4,15);
+
+mesh01.rotation.y = Math.PI/2;
+    
+
+
+//CUBO20delotrolado
+new THREE.BoxGeometry();
+var cubo = new THREE.BoxGeometry(35,3,2);
+    var material01=new THREE.MeshBasicMaterial({color:0xcd853f, Side:THREE.DoubleSide});//mas segmentos es mas saturado
+    var mesh01=new THREE.Mesh(cubo,material01);
+scene.add(mesh01);
+mesh01.position.set(-3.5,-4,15);
+
+mesh01.rotation.y = Math.PI/2;
+    
+
+
+
+   
+    // Render loop
+    function render() {
+        controls.update();
+        renderer.render(scene, camera);
+        requestAnimationFrame(render);
+    }
+    render();
+</script>
+</body>
+</html>
